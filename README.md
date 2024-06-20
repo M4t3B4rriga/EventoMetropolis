@@ -1,7 +1,7 @@
 
 # Proyecto Final : Eventos Metropolis
-### Nombres: Alexander Guacan, Mateo Barriga
-### NRC: 14956
+### Nombres: ARMAS - BARRIGA - BASURTO - RIVADENEIRA
+### NRC: 14900
 ### Fecha: 03/03/2024
 
 

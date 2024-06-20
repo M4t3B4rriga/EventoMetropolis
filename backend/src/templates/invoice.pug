@@ -1,0 +1,109 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title EventMetropolis - Factura
+        style.
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .table {
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+                border-collapse: collapse;
+                border: 1px solid #B0B0B0;
+                border-radius: 8px;
+            }
+
+            .table__header {
+                border-bottom: 1px solid #B0B0B0;
+            }
+
+            .table__row {
+                height: 44px;
+            }
+
+            .invoice {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 32px 64px;
+                border: 1px solid #B0B0B0;
+                border-radius: 8px;
+            }
+
+            .invoice__header {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+
+            .invoice__title {
+                margin: 0;
+            }
+
+            .invoice__body {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+    body
+        main
+            section(class="invoice")
+                header(class="invoice__header")
+                    div
+                        h2(class="invoice__title") Factura
+                        p= `#${id}`
+
+                    img(src="cid:logo" alt="EventMetropolis logo" class="img")
+
+                div(class="invoice__body")
+                    div
+                        h3 Cédula
+                        p= clientId
+                    div
+                        h3 Cliente
+                        p= clientName
+                    div
+                        h3 Correo electrónico
+                        p= clientEmail
+                    div
+                        h3 Celular
+                        p= clientPhoneNumber
+                    div
+                        h3 Publicador
+                        p= userEmail
+                    div
+                        h3 Evento
+                        p= eventTitle
+                    div
+                        h3 Lugar
+                        p= eventAddress
+                    div
+                        h3 Fecha
+                        p= eventDate.toLocaleDateString('es-ES')
+                    div
+                        h3 Hora
+                        p= eventDate.toLocaleTimeString('es-ES')
+
+                table(class="table")
+                    thead(class="table__header")
+                        tr(class="table__row")
+                            th(class="table__cell") Boleto
+                            th(class="table__cell") Cantidad
+                            th(class="table__cell") Total
+
+                    tbody(class="table__body")
+                        tr(class="table__row")
+                            td(class="table__cell")= `$${ticketPrice}`
+                            td(class="table__cell")= ticketsBought
+                            td(class="table__cell")= `$${total}`

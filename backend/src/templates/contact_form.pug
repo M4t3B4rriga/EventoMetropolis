@@ -1,0 +1,83 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title EventMetropolis | Contáctanos
+        style.
+            
+            * {
+                box-sizing: border-box;
+            }
+
+            .section {
+                padding-top: 24px;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-bottom: 24px;
+            }
+
+            .img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .form {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .form__title {
+                font-size: 2rem;
+            }
+
+            .form__group {
+                margin-bottom: 32px;
+            }
+
+            .label {
+                display: inline-block;
+                margin-bottom: 12px;
+            }
+
+            .input {
+                height: 52px;
+                border-radius: 8px;
+                border: 1px solid #C4C4C4;
+                padding: 12px;
+            }
+
+            .input--block {
+                display: block;
+                width: 100%;
+            }
+
+            .textarea {
+                resize: none;
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #C4C4C4;
+                border-radius: 8px;
+            }
+
+    body
+        main 
+            form(class="form section")
+                img(src="cid:logo", alt="EventMetropolis logo" class="img")
+
+                div(class="form__group")
+                    label(for="contactName" class="label") Nombre completo
+                    input(type="text" name="contactName" id="contactName" class="input input--block" value=`${name}` readonly disabled)
+
+                div(class="form__group")
+                    label(for="contactPhoneNumber" class="label") Número celular
+                    input(type="text" name="contactPhoneNumber" id="contactPhoneNumber" class="input input--block" value=`${phoneNumber}` readonly disabled)
+                
+                div(class="form__group")
+                    label(for="contactEmail" class="label") Correo electrónico
+                    input(type="email" name="contactEmail" id="contactEmail" class="input input--block" value=`${email}` readonly disabled)
+
+                div(class="form__group")
+                    label(for="contactMessage" class="label") Mensaje
+                    textarea(name="contactMessage" id="contactMessage" cols="30" rows="10" class="textarea" readonly disabled)= message
